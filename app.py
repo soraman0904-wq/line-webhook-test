@@ -6,9 +6,11 @@ app = Flask(__name__)
 
 @app.route("/webhook", methods=["POST"])
 def webhook():
-    body = request.json
+    body = request.get_json(force=True, silent=True)
+
     print("=== WEBHOOK BODY ===")
-    print(body)   # ← これが超重要
+    print(body)
+
     return "OK", 200
 
 if __name__ == "__main__":
