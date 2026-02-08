@@ -1,5 +1,7 @@
 from flask import Flask, request
 
+print("🔥🔥🔥 THIS IS APP.PY 🔥🔥🔥")
+
 app = Flask(__name__)
 
 @app.route("/webhook", methods=["POST"])
